@@ -6,7 +6,7 @@ Git clone is a command for downloading existing source code from a remote reposi
 Creating a new branch: <br />
   #### git branch <branch-name> <br />
  To push the new branch into the remote repository, you need to use the following command: <br />
-  ### git push -u <remote> <branch-name> <br />
+  #### git push -u <remote> <branch-name> <br />
  Viewing branches: <br />
   #### git branch or git branch --list <br />
  Deleting a branch: <br />
