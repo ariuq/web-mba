@@ -23,7 +23,6 @@ Creating a new branch: <br />
 ## Git push: <br />
   #### git push <remote> <branch-name> <br />
   #### git push --set-upstream <remote> <name-of-your-branch> <br />
- OR <br />
-  <br />
+ OR
   #### git push -u origin <branch_name>
   
