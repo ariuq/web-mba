@@ -1,4 +1,4 @@
-# web-mta
+# web-mba
 ## Git clone: 
 Git clone is a command for downloading existing source code from a remote repository (like Github, for example). <br />
 ####  git clone <https://github.com/ariuq/web-mta.git>
