@@ -1,7 +1,7 @@
 # web-mta
 ## Git clone: 
 Git clone is a command for downloading existing source code from a remote repository (like Github, for example). <br />
-####  git clone <https://name-of-the-repository-link>
+####  git clone <https://github.com/ariuq/web-mta.git>
 ## Git branch: 
 Creating a new branch: <br />
   #### git branch <branch-name> <br />
