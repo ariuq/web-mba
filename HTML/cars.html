@@ -33,7 +33,7 @@
                     return `<article>
                         <h3>${this.name}</h3>
                         <p>OTR price starting from £${this.price}</p>
-                        <a href="carMore.html"><img src="${this.img}"></a>
+                        <a href="carMore.html"><img src="${this.img}" alt="mercedes-benz cars" style="width:30%; height:auto;"></a>
                         <button>Test drive</button>
                         </article>`;
                 }
@@ -151,7 +151,7 @@
 </head>
 <body>
     <header>
-        <a href="../index.html"><img src="../picture/logo.png" alt="mercedes-benz logo" width="10%" height="100em"></a>
+        <a href="../index.html"><img src="../picture/logo.png" alt="mercedes-benz logo" style="width:100px; height: auto"></a>
         <div>
             <menu>
                 <li><a href="cars.html">Cars</a></li>
@@ -165,31 +165,31 @@
        </header>
 
        <main>
-        <h1>Our models</h1>
-        <div>
-            <button>All models</button>
-            <button><img src="../picture/cars/eqLogo.png"></button>
-            <button><img src="../picture/cars/amgLogo.png"></button>
-            <button><img src="../picture/cars/maybachLogo.png"></button>
-            <button>New models</button>
-        </div>
-        <div>
-            <p><b>Fuel type</b></p>
-            <input type="checkbox" id="type1" name="electric" value="electric">
-            <label for="type1">Electric</label><br>
-            <input type="checkbox" id="type2" name="hybrid" value="hybrid">
-            <label for="type2">Plug-in hybrid</label><br>
-            <p><b>Models</b></p>
-            <input type="checkbox" id="model1" name="hatchback" value="hatchback">
-            <label for="model1">Hatchbacks</label><br>
-            <input type="checkbox" id="model2" name="saloon" value="saloon">
-            <label for="model2">Saloons</label><br>
-            <input type="checkbox" id="model3" name="suv" value="suv">
-            <label for="model3">SUVs</label><br>
-            <input type="checkbox" id="model4" name="cabriolet" value="cabriolet">
-            <label for="model4">Cabriolets</label><br>
-        </div>
         <section id="mycars">
+            <h1>Our models</h1>
+            <div>
+                <button>All models</button>
+                <button><img src="../picture/cars/eqLogo.png" alt="mercedes-benz eq logo" style="width:auto; height:15px"></button>
+                <button><img src="../picture/cars/amgLogo.png" alt="mercedes-benz amg logo" style="width:auto; height:15px"></button>
+                <button><img src="../picture/cars/maybachLogo.png" alt="mercedes-benz maybach logo" style="width:auto; height:15px"></button>
+                <button>New models</button>
+            </div>
+            <div>
+                <p><b>Fuel type</b></p>
+                <input type="checkbox" id="type1" name="electric" value="electric">
+                <label for="type1">Electric</label><br>
+                <input type="checkbox" id="type2" name="hybrid" value="hybrid">
+                <label for="type2">Plug-in hybrid</label><br>
+                <p><b>Models</b></p>
+                <input type="checkbox" id="model1" name="hatchback" value="hatchback">
+                <label for="model1">Hatchbacks</label><br>
+                <input type="checkbox" id="model2" name="saloon" value="saloon">
+                <label for="model2">Saloons</label><br>
+                <input type="checkbox" id="model3" name="suv" value="suv">
+                <label for="model3">SUVs</label><br>
+                <input type="checkbox" id="model4" name="cabriolet" value="cabriolet">
+                <label for="model4">Cabriolets</label><br>
+            </div>
         </section>
        </main>
        <footer>
