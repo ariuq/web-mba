@@ -12,8 +12,8 @@ class MyCarModel {
     Bind(eventType, element, property){
         gebi(`${element}_${this.id}`).addEventListener(eventType, (event) => {
             this[property]= event.target.innerHTML;
-            recentCars.__hasChanged = true;
-            console.log(`event: ${event} this = ${JSON.stringify(recentCars)}`);
+            recentcars.__hasChanged = true;
+            console.log(`event: ${event} this = ${JSON.stringify(recentcars)}`);
         })
         return this;
     }
@@ -72,15 +72,7 @@ export default class carModels{
         .then( result => {
             result.json()
                 .then(jsob => {
-
-                    //filter only new NewsItem     
-                    
-        
-                    //updating own javascript
-                        // filteredArray.forEach(newNewsItem => { this._recentNewsList.push((new RecentNewsItem(newNewsItem))) });
-                    
                         gebi(targetElement).insertAdjacentHTML("afterbegin",
-                            
                             filteredArray
                                 .map(newNews => {
                                     const _newNews = new MyCarModel(newNews);
