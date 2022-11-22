@@ -10,7 +10,7 @@ class MyCarModel {
         </article>`;
     }
     Bind(eventType, element, property){
-        gebi(`${element}_${this.id}`).addEventListener(eventType, (event) => {
+        gebi(`${element}_${this.modelName}`).addEventListener(eventType, (event) => {
             this[property]= event.target.innerHTML;
             recentcars.__hasChanged = true;
             console.log(`event: ${event} this = ${JSON.stringify(recentcars)}`);
@@ -34,7 +34,7 @@ class MyCar {
             </article>`;
     }
     Bind(eventType, element, property){
-        gebi(`${element}_${this.id}`).addEventListener(eventType, (event) => {
+        gebi(`${element}_${this.name}_${this.img}_${this.id}`).addEventListener(eventType, (event) => {
             this[property]= event.target.innerHTML;
             recentCars.__hasChanged = true;
             console.log(`event: ${event} this = ${JSON.stringify(recentCars)}`);
@@ -74,10 +74,10 @@ export default class carModels{
                 .then(jsob => {
                         gebi(targetElement).insertAdjacentHTML("afterbegin",
                             filteredArray
-                                .map(newNews => {
-                                    const _newNews = new MyCarModel(newNews);
-                                    this._recentCarsList.push(_newNews);
-                                    return _newNews.Render();
+                                .map(newCars => {
+                                    const _newCars = new MyCarModel(newCars);
+                                    this._recentCarsList.push(_newCars);
+                                    return _newCars.Render();
                                 })
                                 .reduce((prevVal, curVal) => prevVal + curVal, "")
                         );
@@ -96,7 +96,7 @@ const gebi = id => document.getElementById(id);
 
 const recentCars = new carModels("https://api.jsonbin.io/v3/b/637b3aab2b3499323b05e489");
 
-recentCars.Download("main");
+recentCars.Download("cars");
 
 
 
