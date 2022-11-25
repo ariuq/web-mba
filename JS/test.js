@@ -26,7 +26,7 @@ class MyCar {
     }
 
     render() {
-        return `<article class="cars" id="recentcars">
+        return `<article class="cars" id="recentCars">
             <big><b class="recentCars-name">${this.name}</b></big>
             <p class="recentCars-price">OTR price starting from £${this.price}</p>
             <a href="carMore.html" class="recentCars-img"><img src="${this.img}" alt="mercedes-benz cars" style="width:30%; height:auto;"></a>
@@ -72,6 +72,7 @@ export default class carModels{
         .then( result => {
             result.json()
                 .then(jsob => {
+                    const filteredArray = jsob.filter( newCars => modelName.parse(newCars.modelName) > modelName.parse(this._recentCarsList.length > 0 ? this.recentCarsList[this.recentCarsList.length -1].modelName: "SUVs" ))
                         gebi(targetElement).insertAdjacentHTML("afterbegin",
                             filteredArray
                                 .map(newCars => {
@@ -88,6 +89,7 @@ export default class carModels{
                 })    
             })
         .catch(err => { console.log(err) });
+
         
     }
 }
@@ -97,6 +99,7 @@ const gebi = id => document.getElementById(id);
 const recentCars = new carModels("https://api.jsonbin.io/v3/b/637b3aab2b3499323b05e489");
 
 recentCars.Download("cars");
+
 
 
 
