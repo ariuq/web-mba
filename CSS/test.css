@@ -5,15 +5,22 @@ p{
 h2{
   font-family: 'EB Garamond', serif;
 }
+h3{
+  font-family: 'EB Garamond', serif;
+}
+:root{
+  --main-bg-color: black;
+  --main-c-color: white;
+}
 .footer{
-  background-color:black;
-  color:white;
+  background-color:var(--main-bg-color);
+  color:var(--main-c-color);
   display: flex;
   flex-direction: column;
 }
 .footer-group{
   text-align: start;
-  border: 1px solid rgb(114, 114, 114);
+  border: 1px solid var(--main-c-color);
   margin: 50px;
   padding: 15px 30px;
 }
@@ -24,10 +31,10 @@ h2{
   font-size: 12px;
 }
 .footer-group.button{
-  background-color: #000;
-  color: white;
+  background-color: var(--main-bg-color);
+  color: var(--main-c-color);
   font-size: 12px;
-  font-family: 'Montserant';
+  font-family: 'Montserrat';
   font-weight: bold;
   margin: 2px;
   position: relative;
@@ -35,16 +42,14 @@ h2{
   cursor: pointer;
 }
 .footer.social {
-  background-color: #ffffff;
-  color: black;
+  background-color: var(--main-c-color);
+  color: var(--main-bg-color);
   display: flex;
   flex-direction: column;
-  text-align: center;
 }
 .footer.social.title{
   text-align: center;
   font-size: 48px;
-  font-family: 'EB Garamond';
   font-weight: bold;
 }
 .footer.social.icons{
@@ -60,8 +65,8 @@ h2{
 .footer.copyright {
   font-size: 12px;
   text-align: start;
-  background: #000;
-  -webkit-text-fill-color:white;
+  background: var( --main-bg-color);
+  color: var(--main-c-color);
   padding: 2%;
   position: relative;
 }
