@@ -1,20 +1,23 @@
-
+*{
+  font-family: 'Montserant';
+  font-weight: medium;
+}
 
 
 /*Footer css*/
-.footer{
+footer{
     background-color:black;
     color:white;
     display: flex;
     flex-direction: column;
   }
-  .footer-group{
+  .footer.group{
     text-align: start;
     border: 1px solid;
     margin: 50px;
     padding: 15px;
   }
-  .footer-group.h2{
+  .footer.group.h2{
     font-size: 22px;
     font-family: 'EB Garamond';
   }
@@ -23,10 +26,11 @@
     font-family: 'Montserant';
     font-weight: bold;
   }
-  .footer-group.button{
+   footer section button{
     background-color: #000;
     color: white;
     font-size: 12px;
+    border: 1px solid white;
     font-family: 'Montserant';
     font-weight: bold;
     margin: 2px;
@@ -48,6 +52,7 @@
     font-weight: bold;
 }
 .footer.social.icons{
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
@@ -56,12 +61,12 @@
  }
   
   .footer.copyright {
-    font-size: 12px;
-    font-family: 'Montserant';
-    text-align: start;
+    font-family: 'Montserrat';font-size: 12px;
+    width: 40000px;
+    line-height: 18px;
+    letter-spacing: auto;
     background: #000;
     -webkit-text-fill-color:white;
-    padding: 30px;
-    padding-left: 3%;
-    position: relative;
+    padding: 30px 30px 30px 30px;
+    position: static;
   }
