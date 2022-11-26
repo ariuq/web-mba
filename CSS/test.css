@@ -1,1 +1,67 @@
 
+
+
+/*Footer css*/
+.footer{
+    background-color:black;
+    color:white;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-group{
+    text-align: start;
+    border: 1px solid;
+    margin: 50px;
+    padding: 15px;
+  }
+  .footer-group.h2{
+    font-size: 22px;
+    font-family: 'EB Garamond';
+  }
+  .footer.p{
+    font-size: 12px;
+    font-family: 'Montserant';
+    font-weight: bold;
+  }
+  .footer-group.button{
+    background-color: #000;
+    color: white;
+    font-size: 12px;
+    font-family: 'Montserant';
+    font-weight: bold;
+    margin: 2px;
+    position: relative;
+    padding: 8px 20px;
+    cursor: pointer;
+  }
+  .footer.social {
+    background-color: #ffffff;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer.social.title{
+    text-align: center;
+    font-size: 48px;
+    font-family: 'EB Garamond';
+    font-weight: bold;
+}
+.footer.social.icons{
+    flex-direction: row;
+    justify-content: space-around;
+}
+ .footer.social.svg.item{
+    padding-bottom: 50px;
+ }
+  
+  .footer.copyright {
+    font-size: 12px;
+    font-family: 'Montserant';
+    text-align: start;
+    background: #000;
+    -webkit-text-fill-color:white;
+    padding: 30px;
+    padding-left: 3%;
+    position: relative;
+  }
