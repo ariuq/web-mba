@@ -1,72 +1,67 @@
-*{
-  font-family: 'Montserant';
-  font-weight: medium;
-}
-
-
 /*Footer css*/
-footer{
-    background-color:black;
-    color:white;
-    display: flex;
-    flex-direction: column;
-  }
-  .footer.group{
-    text-align: start;
-    border: 1px solid;
-    margin: 50px;
-    padding: 15px;
-  }
-  .footer.group.h2{
-    font-size: 22px;
-    font-family: 'EB Garamond';
-  }
-  .footer.p{
-    font-size: 12px;
-    font-family: 'Montserant';
-    font-weight: bold;
-  }
-   footer section button{
-    background-color: #000;
-    color: white;
-    font-size: 12px;
-    border: 1px solid white;
-    font-family: 'Montserant';
-    font-weight: bold;
-    margin: 2px;
-    position: relative;
-    padding: 8px 20px;
-    cursor: pointer;
-  }
-  .footer.social {
-    background-color: #ffffff;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  .footer.social.title{
-    text-align: center;
-    font-size: 48px;
-    font-family: 'EB Garamond';
-    font-weight: bold;
+p{
+  font-family: 'Montserrat', sans-serif;
+}
+h2{
+  font-family: 'EB Garamond', serif;
+}
+.footer{
+  background-color:black;
+  color:white;
+  display: flex;
+  flex-direction: column;
+}
+.footer-group{
+  text-align: start;
+  border: 1px solid rgb(114, 114, 114);
+  margin: 50px;
+  padding: 15px 30px;
+}
+.footer-group.h2{
+  font-size: 22px;
+}
+.footer.p{
+  font-size: 12px;
+}
+.footer-group.button{
+  background-color: #000;
+  color: white;
+  font-size: 12px;
+  font-family: 'Montserant';
+  font-weight: bold;
+  margin: 2px;
+  position: relative;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+.footer.social {
+  background-color: #ffffff;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.footer.social.title{
+  text-align: center;
+  font-size: 48px;
+  font-family: 'EB Garamond';
+  font-weight: bold;
 }
 .footer.social.icons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 10% 0 10%;
 }
- .footer.social.svg.item{
-    padding-bottom: 50px;
- }
-  
-  .footer.copyright {
-    font-family: 'Montserrat';font-size: 12px;
-    width: 40000px;
-    line-height: 18px;
-    letter-spacing: auto;
-    background: #000;
-    -webkit-text-fill-color:white;
-    padding: 30px 30px 30px 30px;
-    position: static;
-  }
+.footer.social.svg.item{
+  padding-bottom: 50px;
+  width: 30px
+}
+
+.footer.copyright {
+  font-size: 12px;
+  text-align: start;
+  background: #000;
+  -webkit-text-fill-color:white;
+  padding: 2%;
+  position: relative;
+}
