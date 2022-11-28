@@ -1,4 +1,4 @@
-/*Footer css*/
+
 p{
   font-family: 'Montserrat', sans-serif;
 }
@@ -12,6 +12,7 @@ h3{
   --main-bg-color: black;
   --main-c-color: white;
 }
+/*Footer css*/
 .footer{
   background-color:var(--main-bg-color);
   color:var(--main-c-color);
