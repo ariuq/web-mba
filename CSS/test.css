@@ -139,7 +139,6 @@ button{
   font-size: 12px;
   font-weight: bold;
   margin: 2px;
-  padding: 8px 20px;
   cursor: pointer;
 }
 .footer.social {
@@ -171,5 +170,4 @@ button{
   text-align: start;
   color: var(--main-c-color);
   padding: 2%;
-  position: relative;
 }
