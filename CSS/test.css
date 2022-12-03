@@ -116,6 +116,8 @@ h3{
 button{
   font-family: 'Montserrat', sans-serif;
 }
+
+/*Footer css*/
 .footer{
   color:var(--main-c-color);
   display: flex;
@@ -137,8 +139,8 @@ button{
   background-color: var(--main-bg-color);
   color: var(--main-c-color);
   font-size: 12px;
-  font-weight: bold;
   margin: 2px;
+  font-family: 'Montserrat';
   cursor: pointer;
 }
 .footer.social {
