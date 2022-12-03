@@ -1,0 +1,175 @@
+:root{
+  --main-bg-color: black;
+  --main-c-color: white;
+  --main-input-color: 30, 30, 30;
+}
+body {
+  display: grid;
+  background-color:var(--main-bg-color);
+}
+header{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: rgba(var(--main-input-color), 0.8);
+}
+header div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: var(--main-bg-color);
+}
+.Logo {
+  grid-column: 2 / 3;
+  justify-self: center;
+}
+.search{
+  grid-column: 3 / 4;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: center;
+}
+.search button {
+  background-color: var(--main-bg-color);
+  color: var(--main-c-color);
+  margin-right: 30px;
+}
+.search button:hover {
+  text-decoration: underline;
+}
+.search_form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: center;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: var(--main-bg-color);
+  width: auto;
+  margin-left: auto;
+  margin-right: 20px;
+  height: 30px;
+}
+.search_input {
+  border: 0;
+  background: none;
+  padding: 10px;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+.search_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-c-color) ;
+  transition: 0.4s;
+  width: 40px;
+}
+.search_form:hover .search_input {
+  width: 240px;
+}
+.search_form:hover {
+  background-color: rgb(var(--main-input-color));
+}
+menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0;
+  justify-items: center;
+}
+menu li {
+list-style-type: none;
+}
+menu li a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--main-c-color);
+  font-size: 20px;
+}
+.cars {
+  background-color: var(--main-c-color);
+  margin-top: 80px;
+}
+
+/*Footer css*/
+p{
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+h2{
+  font-family: 'EB Garamond', serif;
+  color: #fff;
+}
+h1{
+  font-family: 'EB Garamond', serif;
+  color: #fff;
+}
+h3{
+  font-family: 'EB Garamond', serif;
+}
+button{
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*Footer css*/
+.footer{
+  color:var(--main-c-color);
+  display: flex;
+  flex-direction: column;
+}
+.footer-group{
+  text-align: start;
+  border: 1px solid var(--main-c-color);
+  margin: 50px;
+  padding: 15px 30px;
+}
+.footer-group.h2{
+  font-size: 22px;
+}
+.footer.p{
+  font-size: 12px;
+}
+.footer-group.button{
+  background-color: var(--main-bg-color);
+  color: var(--main-c-color);
+  font-size: 12px;
+  margin: 2px;
+  font-family: 'Montserrat';
+  cursor: pointer;
+}
+.footer.social {
+  background-color: var(--main-c-color);
+  color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.footer.social.title{
+  text-align: center;
+  font-size: 48px;
+  font-family: 'EB Garamond';
+  font-weight: bold;
+}
+.footer.social.icons{
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 10% 0 10%;
+  flex-wrap: wrap  ;
+}
+.footer.social.svg.item{
+  padding-bottom: 50px;
+  width: 40px
+}
+
+.footer.copyright {
+  font-size: 12px;
+  text-align: start;
+  color: var(--main-c-color);
+  padding: 2%;
+}
