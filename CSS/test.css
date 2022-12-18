@@ -99,10 +99,6 @@ menu li a {
   color: var(--main-c-color);
   font-size: 15px;
 }
-.cars {
-  background-color: var(--main-c-color);
-  margin-top: 80px;
-}
 /* Main css */
 main {
   margin-top: 4rem;
@@ -170,7 +166,10 @@ main {
   justify-items: center;
   align-items: center;
 }
-section article {
+.content-new article {
+  padding: 0% 3%;
+}
+.content-why article {
   padding: 0% 3%;
 }
 .content-why article {
@@ -266,7 +265,7 @@ section article div p {
   grid-column: 1/2;
   padding: 5%;
 }
-/*Footer css*/
+/*Root*/
 p {
   font-family: 'Montserrat', sans-serif;
 }
@@ -288,6 +287,81 @@ h3{
 button{
   font-family: 'Montserrat', sans-serif;
 }
+/*Cars style*/
+.cars {
+  background-color: var(--main-c-color);
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows:  auto;
+  gap: 50px 20px;
+  margin-top: 0;
+  padding: 100px;
+}
+.models {
+  grid-column: 1/3;
+  grid-row: 1/1;
+  padding-top: 50px;
+}
+.types {
+  grid-column: 1/1;
+  align-self: start;
+}
+#mycars {
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  border-left: 1px solid #c1c1c1;
+  padding-left: 50px;
+}
+.carmodels {
+  grid-column: 1/4;
+  border-bottom: 1px solid #c1c1c1;
+}
+.car {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.car button {
+width: 80px;
+height: 30px;
+border: none;
+background-color: var(--main-bg-color);
+color: var(--main-c-color);
+border-radius: 10px;
+margin-left: 70%;
+}
+.car a img {
+width: 100%;
+height: 200px;
+object-fit: contain;
+}
+.models h1 {
+  font-size: 300%;
+  font-weight: lighter;
+}
+.modelbuttons {
+  display: flex;
+  flex-direction: row;
+  border-left: 1px solid #c1c1c1;
+  align-items: center;
+}
+.modelbuttons button {
+  width: 150px;
+  height: 50px;
+  object-fit:cover;
+  border: 1px solid #c1c1c1;
+  border-left: none;
+  background-color: var(--main-c-color);
+  font-weight: 900;
+  box-shadow: 5px 5px 5px  #999999;
+}
+.modelbuttons :hover {
+  background-color: #eeeeee;
+}
+
 
 /*Footer css*/
 .footer{

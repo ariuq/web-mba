@@ -19,9 +19,9 @@
                     }
 
                     render() {
-                        return `<article>
-                            <p class="">${this.modelName}</p>
-                            <hr>
+                        return `<article class="carmodels">
+                            <p>${this.modelName}</p>
+                            <br>
                         </article>`;
                     }
                 }
@@ -33,10 +33,10 @@
                 }
 
                 render() {
-                    return `<article>
-                        <big><b>${this.name}</b></big>
+                    return `<article class="car">
+                        <h3>${this.name}</h3>
                         <p>OTR price starting from £${this.price}</p>
-                        <a href="carMore.html"><img src="${this.img}" alt="mercedes-benz cars" style="width:30%; height:auto;"></a>
+                        <a href="carMore.html"><img src="${this.img}" alt="mercedes-benz cars"></a>
                         <button>Test drive</button>
                         </article>`;
                 }
@@ -197,16 +197,17 @@
        </header>
 
        <main class="cars">
-        <section id="mycars">
+            <section class="models">
             <h1>Our models</h1>
-            <div>
+            <div class="modelbuttons">
                 <button>All models</button>
-                <button><img src="../picture/cars/eqLogo.png" alt="mercedes-benz eq logo" style="width:auto; height:15px"></button>
-                <button><img src="../picture/cars/amgLogo.png" alt="mercedes-benz amg logo" style="width:auto; height:15px"></button>
-                <button><img src="../picture/cars/maybachLogo.png" alt="mercedes-benz maybach logo" style="width:auto; height:15px"></button>
+                <button><img src="../picture/cars/eqLogo.png" alt="mercedes-benz eq logo"></button>
+                <button><img src="../picture/cars/amgLogo.png" alt="mercedes-benz amg logo"></button>
+                <button><img src="../picture/cars/maybachLogo.png" alt="mercedes-benz maybach logo"></button>
                 <button>New models</button>
             </div>
-            <div>
+            </section>
+            <div class="types">
                 <p><b>Fuel type</b></p>
                 <input type="checkbox" id="type1" name="electric" value="electric">
                 <label for="type1">Electric</label><br>
@@ -222,7 +223,7 @@
                 <input type="checkbox" id="model4" name="cabriolet" value="cabriolet">
                 <label for="model4">Cabriolets</label><br>
             </div>
-        </section>
+            <section id="mycars"></section>
        </main>
        <!--footer-->
        <footer class="footer">
