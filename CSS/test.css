@@ -10,16 +10,20 @@ body {
 header{
   display: flex;
   flex-direction: column;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
   background-color: rgba(var(--main-input-color), 0.8);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 header div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: var(--main-bg-color);
+}
+.Logo img {
+  width: 80px;
+  height: auto;
 }
 .Logo {
   grid-column: 2 / 3;
@@ -58,7 +62,7 @@ header div {
   border: 0;
   background: none;
   padding: 10px;
-  font-size: 16px;
+  font-size: 12px;
   transition: 0.4s;
   line-height: 40px;
   width: 0px;
@@ -86,29 +90,185 @@ menu {
 menu li {
 list-style-type: none;
 }
+menu li:hover {
+  text-decoration: underline;
+}
 menu li a {
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   color: var(--main-c-color);
-  font-size: 20px;
+  font-size: 15px;
 }
 .cars {
   background-color: var(--main-c-color);
   margin-top: 80px;
 }
-
-/*Footer css*/
-p{
+/* Main css */
+main {
+  margin-top: 4rem;
+}
+.about-us section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  padding: 0% 3%;
+}
+.bigAdd{
+  position: relative;
+  text-align: left;
+  z-index: 0;
+  text-align: center;
+}
+.bigAdd h1 {
+  position: absolute;
+  bottom: 40%;
+  left: 10%;
+  font-size: 300%;
+  font-weight: lighter;
+  text-align: left;
+}
+.bigAdd button {
+  position: absolute;
+  bottom: 35%;
+  left: 10%;
+  width: 10%;
+  height: 5%;
+  border-radius: 20px;
+  border: none;
+  font-size: 80%;
+  font-weight: bolder;
+  background-color: var(--main-c-color);
+  color: var(--main-bg-color);
+  transition: background-color 0.5s;
+}
+.bigAdd button:hover {
+  cursor: pointer;
+  background-color: var(--main-bg-color);
+  color: var(--main-c-color);
+}
+.content-new {
+  background-color: var(--main-bg-color);
+}
+.content-why {
+  background-color: var(--main-c-color); 
+}
+.content-new article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+section article {
+  padding: 0% 3%;
+}
+.content-why article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+.content-new h2{
+  padding-top: 30px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 200%;
+  margin: 0;
+}
+.content-why h2{
+  padding-top: 30px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 200%;
+  margin: 0;
+}
+section hr {
+  width: 100%;
+  height: 0.1px;
+  background-color: #999999;
+  border: 0 none; 
+}
+.home-A img {
+  grid-column: 1/2 ;
+  padding: 5%;
+  width: 100%;
+  height: 23vw;
+  object-fit: cover;
+}
+.home-B img {
+  grid-column: 2/3;
+  padding: 5%;
+  width: 100%;
+  height: 23vw;
+  object-fit: cover;
+}
+.home-A div {
+  grid-column: 2/3;
+  padding: 5%;
+}
+.home-B div {
+  grid-column: 1/2;
+  padding: 5%;
+}
+section article div h3 {
+  font-size: 200%;
+  font-weight: normal;
+}
+section article div p {
+  font-size: 100%;
+  line-height: 200%;
+}
+.content h2 {
+  text-align: center;
   font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+}
+.content article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+.article-A {
+  background-color: var(--main-c-color);
+}
+.article-A img {
+  grid-column: 1/2 ;
+  padding: 5%;
+  width: 100%;
+  height: 23vw;
+  object-fit: cover;
+}
+.article-B img {
+  grid-column: 2/3;
+  padding: 5%;
+  width: 100%;
+  height: 23vw;
+  object-fit: cover;
+}
+.article-A div {
+  grid-column: 2/3;
+  padding: 5%;
+}
+.article-B div {
+  grid-column: 1/2;
+  padding: 5%;
+}
+/*Footer css*/
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+.white-p{
   color: #fff;
+}
+.black-p{
+  color: var(--main-bg-color);
 }
 h2{
   font-family: 'EB Garamond', serif;
-  color: #fff;
 }
 h1{
   font-family: 'EB Garamond', serif;
-  color: #fff;
 }
 h3{
   font-family: 'EB Garamond', serif;
@@ -125,12 +285,16 @@ button{
 }
 .footer-group{
   text-align: start;
-  border: 1px solid var(--main-c-color);
+  border: 1px solid #999999;
   margin: 50px;
   padding: 15px 30px;
 }
 .footer-group.h2{
   font-size: 22px;
+}
+.footer-group p {
+  font-size: 14px;
+  line-height: 150%;
 }
 .footer.p{
   font-size: 12px;
