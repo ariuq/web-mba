@@ -361,6 +361,78 @@ object-fit: contain;
 .modelbuttons :hover {
   background-color: #eeeeee;
 }
+/*Services*/
+.areas {
+  display: flex;
+  flex-direction: column;
+}
+.areas h2 {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 250%;
+  font-weight: lighter;
+}
+.areas div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #fff;
+}
+.areas div div {
+  position: relative;
+  object-fit: contain;
+}
+.areas div div p {
+  position: absolute;
+  bottom: 0;
+}
+.areas div div img {
+  width: 100%;
+ height: 100%;
+}
+.areas2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10%;
+}
+.areas2 div {
+  position: relative;
+  object-fit: contain;
+  color: #fff;
+}
+.areas2 div p {
+  position: absolute;
+  bottom: 0;
+}
+.areas2 div img {
+  width: 100%;
+  height: 100%;
+}
+.service-button {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  flex-direction: column;
+}
+.service-button button {
+  width: 150px;
+  height: 30px;
+  border: none;
+  background-color: var(--main-c-color);
+  border-radius: 10px;
+  margin-bottom: 3%;
+  font-weight: bolder;
+}
+.service-button button:hover {
+  background-color: #525252;
+  color: white;
+}
+.service-button div {
+  padding: 0;
+}
 
 
 /*Footer css*/
