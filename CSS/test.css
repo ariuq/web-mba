@@ -503,7 +503,7 @@ object-fit: contain;
 }
 .areas2 div {
   position: relative;
-  object-fit: contain;
+  object-fit: cover;
   color: #fff;
 }
 .areas2 div p {
@@ -595,7 +595,7 @@ gap: 5%;
   height: 23vw;
   object-fit: cover;
 }
-
+/*--------------------------------------- Footer css -----------------------------------------*/
 /*Footer css*/
 .footer{
   color:var(--main-c-color);
