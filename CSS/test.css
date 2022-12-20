@@ -3,10 +3,16 @@
   --main-c-color: white;
   --main-input-color: 30, 30, 30;
 }
+/*Body таг доторх бүх элементийн background color цагаан 
+ерөнхийд нь grid болгож өгсөн*/
 body {
   display: grid;
   background-color:var(--main-bg-color);
 }
+/*header таг доторх бүх элеметүүдийг ерөнхий flex 
+болгоод объектуудыг баганан хэлбэрээр байрлуулаад 
+background color 1Е1Е1ЕСС өнгөтэй болгосон. Position fixed 
+болгосон. энэ нь доош нь гүйлгэсэн ч байрлал нь хэвээрээ үлдэнэ.*/
 header{
   display: flex;
   flex-direction: column;
@@ -16,19 +22,25 @@ header{
   top: 0;
   z-index: 1;
 }
+/*Header таг доторх div тагны элементүүдийг 
+grid-template-columns: repeat ашиглан
+3 баганад хуваасан.*/
 header div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: var(--main-bg-color);
 }
+/*Өргөнийг нь 80px, өндрийг нь автоматаар тохируулдаг болгосон.*/
 .Logo img {
   width: 80px;
   height: auto;
 }
 .Logo {
-  grid-column: 2 / 3;
+  grid-column: 2 / 3; /* 3 хуваасны 2 дах хэсэг дээр байршуулсан.*/
   justify-self: center;
 }
+/*тухайн grid болсон хэсгийн 4 хуваасны 3 хэсэг дээр байршуулаад
+өөрийгөө flex болгоод өөртөө байгаа тагуудыг мөр хэлбэрт байршуулсан. */
 .search{
   grid-column: 3 / 4;
   display:flex;
@@ -42,9 +54,14 @@ header div {
   color: var(--main-c-color);
   margin-right: 30px;
 }
+/*search class дотор байгаа button-гууд hover 
+очиход доогуур нь зураас гардаг болгосон.*/
 .search button:hover {
   text-decoration: underline;
 }
+/*search_form класс дотор байгаа элментүүдийг 
+flex болгоод элементүүдийг төгсгөл мөр лүү шилжүүлсэн.
+20px border radius зааж өгсөн. Арын өнгийг хар болгосон.*/
 .search_form {
   display: flex;
   justify-content: flex-end;
@@ -58,6 +75,8 @@ header div {
   margin-right: 20px;
   height: 30px;
 }
+/*search_input класс дотор байгаа элементүүдийн font
+size 12px болгосон ба 0.4с хугацаанд transition хийнэ.*/
 .search_input {
   background: none;
   padding: 10px;
@@ -68,9 +87,12 @@ header div {
   color: #c1c1c1;
   border: none;
 }
+/*Сонгох үед outline хэвийн болгосон*/
 .search_input:focus {
   outline: none;
 }
+/*search_icon класс доторх элементийг flex болгоод
+элементүүдийг төвд байрлуулсан. 0.4c transition хийдэг болгосон*/
 .search_icon {
   display: flex;
   justify-content: center;
@@ -79,13 +101,17 @@ header div {
   transition: 0.4s;
   width: 40px;
 }
+/*search_form класс дээр mouse очих үед search_input классын өргөнийг нь 
+240px болгоно.*/
 .search_form:hover .search_input {
   width: 240px;
   border: none;
 }
+/*search_form дээр mouse очиход арын өнгийг өөрчилнө.*/
 .search_form:hover {
   background-color: rgb(var(--main-input-color));
 }
+/*menu таг доторхыг ерөнхий grid болгоод 3 багана болгож хуваасан.*/
 menu {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -95,9 +121,13 @@ menu {
 menu li {
 list-style-type: none;
 }
+/*menu таг доторх li таг доторх элемент дээр хулгана
+очих үед доогуур нь зураас гарна.*/
 menu li:hover {
   text-decoration: underline;
 }
+/*menu тагны li таг доторх а таг доторх элементүүдийн font, өнгө, 
+font  хэмжээ зэрэгт утга өгсөн.*/
 menu li a {
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
@@ -105,12 +135,20 @@ menu li a {
   font-size: 15px;
 }
 /* Main css */
+/*main таг-н элементүүдийг дээд талаасаа 4rem padding авсан.*/
 main {
   margin-top: 4rem;
 }
+/*----About us css----*/
+
+
+/*about-us класс доторх элементүүдийг дээд талаасаа
+115px margin авсан.*/
 .about-us {
   margin-top: 115px;
 }
+/*about-us класс доторх Section тагуудын элементүүдийг
+grid болгож аваад 2 багананд хуваасан.*/
 .about-us section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -126,20 +164,27 @@ main {
   font-size: 100%;
   line-height: 200%;
 }
+
 .bigAdd{
-  position: relative;
+  position: relative;/*бусад элементээс үлдээсэн хоосон зайнд тохируулахгүй
+  мөн өөрчлөхгүйгээр одоогийн байрлалтай харьцангуй байрлуулна.*/
   text-align: left;
   z-index: 0;
   text-align: center;
 }
+
 .bigAdd h1 {
-  position: absolute;
+  position: absolute;/*Өөрийн эцэг, эхийнхээ байршлыг харьцуулаад орчин
+  тойрны байрлалыг өөрчилдөг.*/
   bottom: 40%;
   left: 10%;
   font-size: 300%;
   font-weight: lighter;
   text-align: left;
 }
+/*bidAdd класс дотор байгаа button таг-н элементийн байршлалыг absolute доод
+ талаасаа 35% зай аваад 20px радиус border-той background color цагаан, энгийн 
+ өнгийг хар болгосон.*/
 .bigAdd button {
   position: absolute;
   bottom: 35%;
@@ -154,15 +199,22 @@ main {
   color: var(--main-bg-color);
   transition: background-color 0.5s;
 }
+/*Button дээр хулгана очих үед арын өнгийг цагаан
+өөрийн өнгийг хар болгодог болгосон.*/
 .bigAdd button:hover {
   cursor: pointer;
   background-color: var(--main-bg-color);
   color: var(--main-c-color);
 }
+/*content-new класс доторх элементийн арын өнгийг хар
+өөрийнх нь өнгийг цагаан болгосон.*/
 .content-new {
   background-color: var(--main-bg-color);
   color: var(--main-c-color);
 }
+/*content-new классын а таг доторх элементүүдийг
+flex болгоод баганы дагуу байрлуулсан. тус бүрийнх доторх зүйлсийг
+төв байршилтай болгоод өнгийг нь цагаан болгосон.*/
 .content-new a {
   text-decoration: none;
   font-size: large;
@@ -173,9 +225,11 @@ main {
   margin-bottom: 3%;
   color: var(--main-c-color);
 }
-
+/*content-why классын а таг доторх элементүүдийг flex болгоод
+баганы дагуу байрлуулсан. өнгийг хар болгосон.
+*/
 .content-why a {
-  text-decoration: none;
+  text-decoration: none; /*ямар нэгэн чимгийг байхгүй болгоно. жишээ нь italic, underline гэх мэт*/
   font-size: large;
   display: flex;
   flex-direction: column;
@@ -184,6 +238,7 @@ main {
   margin-bottom: 3%;
   color: var(--main-bg-color);
 }
+/*content-why класс доторх элементүүдийн background color цагаан болгоод ерөнхий flex болгоод баганы дагуу байрлуулсан.*/
 .content-why {
   background-color: var(--main-c-color); 
   display: flex;
@@ -191,18 +246,23 @@ main {
   justify-content: center;
   align-items: center;
 }
+/*content-new классын article таг дах элесентүүдийг grid болгоод
+2 багананд хуваасан.*/
 .content-new article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
 }
+
 .content-new article {
   padding: 0% 3%;
 }
 .content-why article {
   padding: 0% 3%;
 }
+/*content-why классын article таг доторхыг grid болгоод 2
+багананд хуваасан.*/
 .content-why article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -224,6 +284,8 @@ main {
   font-size: 200%;
   margin: 0;
 }
+/*home-a классын img таг доторх элементыг grid 1/2 байрлалд байршуулаад
+зургийг заасан хэмжээгээр харьцааагаа хадгалж дүүргэсэн.*/
 .home-A img {
   grid-column: 1/2 ;
   padding: 5%;
@@ -259,6 +321,7 @@ section article div p {
   font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
 }
+/*content классын article таг доторх элементийг 2 багананд хуваасан.*/
 .content article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -290,7 +353,7 @@ section article div p {
   grid-column: 1/2;
   padding: 5%;
 }
-/*Root*/
+/*Ерөнхий арын өнгө font зэргийг оноож өгсөн.*/
 p {
   font-family: 'Montserrat', sans-serif;
 }
@@ -313,6 +376,9 @@ button{
   font-family: 'Montserrat', sans-serif;
 }
 /*Cars style*/
+/*cars класс доторх элементүүдийн арын өнгийг цагаан болгоод grid болгож аваад
+баганы өндрийг нь 200px өргөнийг нь авто болгоод, мөрийг автомаар тааруулдааг байхаар
+болгосон.*/
 .cars {
   background-color: var(--main-c-color);
   margin-top: 80px;
@@ -323,15 +389,19 @@ button{
   margin-top: 0;
   padding: 100px;
 }
+/*нэг мөрийг 3 багананад хуваасан. дээрээсээ 50px padding авсан.*/
 .models {
   grid-column: 1/3;
   grid-row: 1/1;
   padding-top: 50px;
 }
+/*types класс доторх элементүүдийг баганы эхлэлд байрлуулна.*/
 .types {
   grid-column: 1/1;
   align-self: start;
 }
+/*mycars id-тай элементүүдийн баганы 3 хуваасны 2 хэсгээс байрлуулна. доторх 
+элементүүдийг 3 багананд хуваасан. Мөн зүү талаасаа 50px padding авсан.*/
 #mycars {
   grid-column: 2/3;
   display: grid;
@@ -339,10 +409,12 @@ button{
   border-left: 1px solid #c1c1c1;
   padding-left: 50px;
 }
+/*carmodels class доторх элементүүдийг баганыг 4 хуваасны 1 дэх байранд байрлуулсан.*/
 .carmodels {
   grid-column: 1/4;
   border-bottom: 1px solid #c1c1c1;
 }
+/*car классын элементүүдийг flex болгоод баганы дагуу байрлуулсан.*/
 .car {
   display: flex;
   flex-direction: column;
@@ -358,15 +430,21 @@ color: var(--main-c-color);
 border-radius: 10px;
 margin-left: 70%;
 }
+/*car классын а таг доторх зураг нь харьцаагаа хадгалаад
+өгөгдсөн хэмжээнд таарахын тулд хэмжээгээ өөрчилдөг байхаар өгсөн. 
+*/
 .car a img {
 width: 100%;
 height: 200px;
 object-fit: contain;
 }
+/*models классын h1 таг дах текстыг илүү тодруулсан.*/
 .models h1 {
   font-size: 300%;
   font-weight: lighter;
 }
+/*modelbuttons класс доторх элементүүдийг flex болгож аваад
+мөрийн дагуу байршуулсан.*/
 .modelbuttons {
   display: flex;
   flex-direction: row;
@@ -383,10 +461,12 @@ object-fit: contain;
   font-weight: 900;
   box-shadow: 5px 5px 5px  #999999;
 }
+/*modelbuttons класс дээр хулгана очиход арын өнгө өөрчлөгдсөн.*/
 .modelbuttons :hover {
   background-color: #eeeeee;
 }
 /*Services*/
+/*areas класс доторх элементүүдийг flex болгоод баганы дагуу байрлуулсан.*/
 .areas {
   display: flex;
   flex-direction: column;
