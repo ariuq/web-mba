@@ -596,28 +596,33 @@ gap: 5%;
   object-fit: cover;
 }
 /*--------------------------------------- Footer css -----------------------------------------*/
-/*Footer css*/
+/*footer хэсгийн өнгө болон тэнхлэгийг нь тодорхойлсон*/
 .footer{
   color:var(--main-c-color);
   display: flex;
   flex-direction: column;
 }
+/*техт зай, байршлыг нь заасан*/
 .footer-group{
   text-align: start;
   border: 1px solid #999999;
   margin: 50px;
   padding: 15px 30px;
 }
+/*техт гарчиг*/
 .footer-group.h2{
   font-size: 22px;
 }
+/*техт мөрийн өндөр, хэмжээг заасан*/
 .footer-group p {
   font-size: 14px;
   line-height: 150%;
 }
+/*техт фонтыг хэмжээг зааж өгсөн*/
 .footer.p{
   font-size: 12px;
 }
+/*тест товчийн өнгө, фонт, хэмжээг тодорхойлсон*/
 .footer-group.button{
   background-color: var(--main-bg-color);
   color: var(--main-c-color);
@@ -626,6 +631,7 @@ gap: 5%;
   font-family: 'Montserrat';
   cursor: pointer;
 }
+/*social хэсгийн section-ийг үүсгэсэн*/
 .footer.social {
   background-color: var(--main-c-color);
   color: var(--main-bg-color);
@@ -633,23 +639,26 @@ gap: 5%;
   flex-direction: column;
   text-align: center;
 }
+/*social хэсгийн дээд техтыг тодорхойлно*/
 .footer.social.title{
   text-align: center;
   font-size: 48px;
   font-family: 'EB Garamond';
   font-weight: bold;
 }
+/*social icon бүхэлд нь байршлыг заасан*/
 .footer.social.icons{
   flex-direction: row;
   justify-content: space-around;
   margin: 0 10% 0 10%;
   flex-wrap: wrap  ;
 }
+/*social icon тус бүрд нь байршлыг заасан*/
 .footer.social.svg.item{
   padding-bottom: 50px;
   width: 40px
 }
-
+/*copyright техтыг тодорхойлсон*/
 .footer.copyright {
   font-size: 12px;
   text-align: start;
