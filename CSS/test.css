@@ -1,13 +1,21 @@
-:root{
+:root {
   --main-bg-color: black;
   --main-c-color: white;
   --main-input-color: 30, 30, 30;
 }
+
+/*Body таг доторх бүх элементийн background color цагаан 
+ерөнхийд нь grid болгож өгсөн*/
 body {
   display: grid;
-  background-color:var(--main-bg-color);
+  background-color: var(--main-bg-color);
 }
-header{
+
+/*header таг доторх бүх элеметүүдийг ерөнхий flex 
+болгоод объектуудыг баганан хэлбэрээр байрлуулаад 
+background color 1Е1Е1ЕСС өнгөтэй болгосон. Position fixed 
+болгосон. энэ нь доош нь гүйлгэсэн ч байрлал нь хэвээрээ үлдэнэ.*/
+header {
   display: flex;
   flex-direction: column;
   background-color: rgba(var(--main-input-color), 0.8);
@@ -16,35 +24,54 @@ header{
   top: 0;
   z-index: 1;
 }
+
+/*Header таг доторх div тагны элементүүдийг 
+grid-template-columns: repeat ашиглан
+3 баганад хуваасан.*/
 header div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: var(--main-bg-color);
 }
+
+/*Өргөнийг нь 80px, өндрийг нь автоматаар тохируулдаг болгосон.*/
 .Logo img {
   width: 80px;
   height: auto;
 }
+
 .Logo {
   grid-column: 2 / 3;
+  /* 3 хуваасны 2 дах хэсэг дээр байршуулсан.*/
   justify-self: center;
 }
-.search{
+
+/*тухайн grid болсон хэсгийн 4 хуваасны 3 хэсэг дээр байршуулаад
+өөрийгөө flex болгоод өөртөө байгаа тагуудыг мөр хэлбэрт байршуулсан. */
+.search {
   grid-column: 3 / 4;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   align-self: center;
 }
+
 .search button {
   background-color: var(--main-bg-color);
   color: var(--main-c-color);
   margin-right: 30px;
 }
+
+/*search class дотор байгаа button-гууд hover 
+очиход доогуур нь зураас гардаг болгосон.*/
 .search button:hover {
   text-decoration: underline;
 }
+
+/*search_form класс дотор байгаа элментүүдийг 
+flex болгоод элементүүдийг төгсгөл мөр лүү шилжүүлсэн.
+20px border radius зааж өгсөн. Арын өнгийг хар болгосон.*/
 .search_form {
   display: flex;
   justify-content: flex-end;
@@ -58,6 +85,9 @@ header div {
   margin-right: 20px;
   height: 30px;
 }
+
+/*search_input класс дотор байгаа элементүүдийн font
+size 12px болгосон ба 0.4с хугацаанд transition хийнэ.*/
 .search_input {
   background: none;
   padding: 10px;
@@ -68,53 +98,79 @@ header div {
   color: #c1c1c1;
   border: none;
 }
+
+/*Сонгох үед outline хэвийн болгосон*/
 .search_input:focus {
   outline: none;
 }
+
+/*search_icon класс доторх элементийг flex болгоод
+элементүүдийг төвд байрлуулсан. 0.4c transition хийдэг болгосон*/
 .search_icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--main-c-color) ;
+  color: var(--main-c-color);
   transition: 0.4s;
   width: 40px;
 }
+
+/*search_form класс дээр mouse очих үед search_input классын өргөнийг нь 
+240px болгоно.*/
 .search_form:hover .search_input {
   width: 240px;
   border: none;
 }
+
+/*search_form дээр mouse очиход арын өнгийг өөрчилнө.*/
 .search_form:hover {
   background-color: rgb(var(--main-input-color));
 }
-menu{
+
+menu {
   padding: 0;
   margin: 0;
 }
+
 menu ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 0;
   justify-items: center;
 }
+
 menu ul li {
-list-style-type: none;
+  list-style-type: none;
 }
+
 menu ul li:hover {
   text-decoration: underline;
 }
+
 menu ul li a {
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   color: var(--main-c-color);
   font-size: 15px;
 }
+
 /* Main css */
+/*main таг-н элементүүдийг дээд талаасаа 4rem padding авсан.*/
 main {
   margin-top: 4rem;
 }
+
+/*----About us css----*/
+
+
+/*about-us класс доторх элементүүдийг дээд талаасаа
+115px margin авсан.*/
 .about-us {
   margin-top: 115px;
 }
+
+/*about-us класс доторх Section тагуудын элементүүдийг
+grid болгож аваад 2 багананд хуваасан.*/
 .about-us section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -122,28 +178,40 @@ main {
   align-items: center;
   padding: 0% 3%;
 }
+
 .about-us section div h3 {
   font-size: 200%;
   font-weight: normal;
 }
+
 .about-us section div p {
   font-size: 100%;
   line-height: 200%;
 }
-.bigAdd{
+
+.bigAdd {
   position: relative;
+  /*бусад элементээс үлдээсэн хоосон зайнд тохируулахгүй
+  мөн өөрчлөхгүйгээр одоогийн байрлалтай харьцангуй байрлуулна.*/
   text-align: left;
   z-index: 0;
   text-align: center;
 }
+
 .bigAdd h1 {
   position: absolute;
+  /*Өөрийн эцэг, эхийнхээ байршлыг харьцуулаад орчин
+  тойрны байрлалыг өөрчилдөг.*/
   bottom: 40%;
   left: 10%;
   font-size: 300%;
   font-weight: lighter;
   text-align: left;
 }
+
+/*bidAdd класс дотор байгаа button таг-н элементийн байршлалыг absolute доод
+ талаасаа 35% зай аваад 20px радиус border-той background color цагаан, энгийн 
+ өнгийг хар болгосон.*/
 .bigAdd button {
   position: absolute;
   bottom: 35%;
@@ -158,15 +226,25 @@ main {
   color: var(--main-bg-color);
   transition: background-color 0.5s;
 }
+
+/*Button дээр хулгана очих үед арын өнгийг цагаан
+өөрийн өнгийг хар болгодог болгосон.*/
 .bigAdd button:hover {
   cursor: pointer;
   background-color: var(--main-bg-color);
   color: var(--main-c-color);
 }
+
+/*content-new класс доторх элементийн арын өнгийг хар
+өөрийнх нь өнгийг цагаан болгосон.*/
 .content-new {
   background-color: var(--main-bg-color);
   color: var(--main-c-color);
 }
+
+/*content-new классын а таг доторх элементүүдийг
+flex болгоод баганы дагуу байрлуулсан. тус бүрийнх доторх зүйлсийг
+төв байршилтай болгоод өнгийг нь цагаан болгосон.*/
 .content-new a {
   text-decoration: none;
   font-size: large;
@@ -178,8 +256,12 @@ main {
   color: var(--main-c-color);
 }
 
+/*content-why классын а таг доторх элементүүдийг flex болгоод
+баганы дагуу байрлуулсан. өнгийг хар болгосон.
+*/
 .content-why a {
   text-decoration: none;
+  /*ямар нэгэн чимгийг байхгүй болгоно. жишээ нь italic, underline гэх мэт*/
   font-size: large;
   display: flex;
   flex-direction: column;
@@ -188,39 +270,51 @@ main {
   margin-bottom: 3%;
   color: var(--main-bg-color);
 }
+
+/*content-why класс доторх элементүүдийн background color цагаан болгоод ерөнхий flex болгоод баганы дагуу байрлуулсан.*/
 .content-why {
-  background-color: var(--main-c-color); 
+  background-color: var(--main-c-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+/*content-new классын article таг дах элесентүүдийг grid болгоод
+2 багананд хуваасан.*/
 .content-new article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
 }
+
 .content-new article {
   padding: 0% 3%;
 }
+
 .content-why article {
   padding: 0% 3%;
 }
+
+/*content-why классын article таг доторхыг grid болгоод 2
+багананд хуваасан.*/
 .content-why article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
 }
-.content-new h2{
+
+.content-new h2 {
   padding-top: 30px;
   text-align: center;
   font-weight: normal;
   font-size: 200%;
   margin: 0;
 }
-.content-why h2{
+
+.content-why h2 {
   padding-top: 30px;
   padding-bottom: 15px;
   text-align: center;
@@ -228,13 +322,17 @@ main {
   font-size: 200%;
   margin: 0;
 }
+
+/*home-a классын img таг доторх элементыг grid 1/2 байрлалд байршуулаад
+зургийг заасан хэмжээгээр харьцааагаа хадгалж дүүргэсэн.*/
 .home-A img {
-  grid-column: 1/2 ;
+  grid-column: 1/2;
   padding: 5%;
   width: 100%;
   height: 23vw;
   object-fit: cover;
 }
+
 .home-B img {
   grid-column: 2/3;
   padding: 5%;
@@ -242,43 +340,53 @@ main {
   height: 23vw;
   object-fit: cover;
 }
+
 .home-A div {
   grid-column: 2/3;
   padding: 5%;
 }
+
 .home-B div {
   grid-column: 1/2;
   padding: 5%;
 }
+
 section article div h3 {
   font-size: 200%;
   font-weight: normal;
 }
+
 section article div p {
   font-size: 100%;
   line-height: 200%;
 }
+
 .content h2 {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
 }
+
+/*content классын article таг доторх элементийг 2 багананд хуваасан.*/
 .content article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
 }
+
 .article-A {
   background-color: var(--main-c-color);
 }
+
 .article-A img {
-  grid-column: 1/2 ;
+  grid-column: 1/2;
   padding: 5%;
   width: 100%;
   height: 23vw;
   object-fit: cover;
 }
+
 .article-B img {
   grid-column: 2/3;
   padding: 5%;
@@ -286,56 +394,76 @@ section article div p {
   height: 23vw;
   object-fit: cover;
 }
+
 .article-A div {
   grid-column: 2/3;
   padding: 5%;
 }
+
 .article-B div {
   grid-column: 1/2;
   padding: 5%;
 }
-/*Root*/
+
+/*Ерөнхий арын өнгө font зэргийг оноож өгсөн.*/
 p {
   font-family: 'Montserrat', sans-serif;
 }
-.white-p{
+
+.white-p {
   color: #fff;
 }
-.black-p{
+
+.black-p {
   color: var(--main-bg-color);
 }
-h2{
+
+h2 {
   font-family: 'EB Garamond', serif;
 }
-h1{
+
+h1 {
   font-family: 'EB Garamond', serif;
 }
-h3{
+
+h3 {
   font-family: 'EB Garamond', serif;
 }
-button{
+
+button {
   font-family: 'Montserrat', sans-serif;
 }
+
 /*Cars style*/
+/*cars класс доторх элементүүдийн арын өнгийг цагаан болгоод grid болгож аваад
+баганы өндрийг нь 200px өргөнийг нь авто болгоод, мөрийг автомаар тааруулдааг байхаар
+болгосон.*/
 .cars {
   background-color: var(--main-c-color);
   margin-top: 80px;
   display: grid;
   grid-template-columns: 200px auto;
-  grid-template-rows:  auto;
+  grid-template-rows: auto;
   gap: 50px 20px;
   margin-top: 0;
   padding: 100px;
 }
+
+/*нэг мөрийг 3 багананад хуваасан. дээрээсээ 50px padding авсан.*/
 .models {
   grid-column: 1/3;
   grid-row: 1/1;
   padding-top: 50px;
 }
+
+/*types класс доторх элементүүдийг баганы эхлэлд байрлуулна.*/
 .types {
   grid-column: 1/1;
   align-self: start;
 }
+
+/*mycars id-тай элементүүдийн баганы 3 хуваасны 2 хэсгээс байрлуулна. доторх 
+элементүүдийг 3 багананд хуваасан. Мөн зүү талаасаа 50px padding авсан.*/
 #mycars {
   grid-column: 2/3;
   display: grid;
@@ -343,101 +471,130 @@ button{
   border-left: 1px solid #c1c1c1;
   padding-left: 50px;
 }
+
+/*carmodels class доторх элементүүдийг баганыг 4 хуваасны 1 дэх байранд байрлуулсан.*/
 .carmodels {
   grid-column: 1/4;
   border-bottom: 1px solid #c1c1c1;
 }
+
+/*car классын элементүүдийг flex болгоод баганы дагуу байрлуулсан.*/
 .car {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
 }
+
 .car button {
-width: 80px;
-height: 30px;
-border: none;
-background-color: var(--main-bg-color);
-color: var(--main-c-color);
-border-radius: 10px;
-margin-left: 70%;
+  width: 80px;
+  height: 30px;
+  border: none;
+  background-color: var(--main-bg-color);
+  color: var(--main-c-color);
+  border-radius: 10px;
+  margin-left: 70%;
 }
+
+/*car классын а таг доторх зураг нь харьцаагаа хадгалаад
+өгөгдсөн хэмжээнд таарахын тулд хэмжээгээ өөрчилдөг байхаар өгсөн. 
+*/
 .car a img {
-width: 100%;
-height: 200px;
-object-fit: contain;
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
 }
+
+/*models классын h1 таг дах текстыг илүү тодруулсан.*/
 .models h1 {
   font-size: 300%;
   font-weight: lighter;
 }
+
+/*modelbuttons класс доторх элементүүдийг flex болгож аваад
+мөрийн дагуу байршуулсан.*/
 .modelbuttons {
   display: flex;
   flex-direction: row;
   border-left: 1px solid #c1c1c1;
   align-items: center;
 }
+
 .modelbuttons button {
   width: 150px;
   height: 50px;
-  object-fit:cover;
+  object-fit: cover;
   border: 1px solid #c1c1c1;
   border-left: none;
   background-color: var(--main-c-color);
   font-weight: 900;
-  box-shadow: 5px 5px 5px  #999999;
+  box-shadow: 5px 5px 5px #999999;
 }
+
+/*modelbuttons класс дээр хулгана очиход арын өнгө өөрчлөгдсөн.*/
 .modelbuttons :hover {
   background-color: #eeeeee;
 }
+
 /*Services*/
+/*areas класс доторх элементүүдийг flex болгоод баганы дагуу байрлуулсан.*/
 .areas {
   display: flex;
   flex-direction: column;
 }
+
 .areas h2 {
   text-align: center;
   margin-top: 5%;
   font-size: 250%;
   font-weight: lighter;
 }
+
 .areas div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   color: #fff;
 }
+
 .areas div div {
   position: relative;
   object-fit: contain;
 }
+
 .areas div div p {
   position: absolute;
   bottom: 0;
 }
+
 .areas div div img {
   width: 100%;
- height: 100%;
+  height: 100%;
 }
-.areas2{
+
+.areas2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 10%;
 }
+
 .areas2 div {
   position: relative;
   object-fit: contain;
   color: #fff;
 }
+
 .areas2 div p {
   position: absolute;
   bottom: 0;
 }
+
 .areas2 div img {
   width: 100%;
   height: 100%;
 }
+
 .test {
   margin-top: 5%;
   display: flex;
@@ -446,6 +603,7 @@ object-fit: contain;
   color: #fff;
   flex-direction: column;
 }
+
 .test button {
   width: 150px;
   height: 30px;
@@ -455,94 +613,120 @@ object-fit: contain;
   margin-bottom: 3%;
   font-weight: bolder;
 }
+
 .test button:hover {
   background-color: #525252;
   color: white;
 }
+
 .test div {
   padding: 0;
 }
+
 /*Carmore header*/
 .subMenu {
   border-bottom: 1px solid #999999;
 }
-.subMenu  ul li a{
+
+.subMenu ul li a {
   color: var(--main-c-color);
   text-decoration: none;
 }
+
 .subMenu ul li a:hover {
   text-decoration: underline;
 }
+
 .subMenu ul {
   display: flex;
   flex-direction: row;
 }
+
 .subMenu ul li {
   padding: 2%;
   font-family: 'Montserrat';
 }
+
 /*Car More main*/
-.info{
+.info {
   color: var(--main-c-color);
   display: flex;
   flex-direction: row;
-justify-content: start;
-margin-left: 5%;
+  justify-content: start;
+  margin-left: 5%;
 }
+
 .info article {
   padding-right: 10%;
   padding-left: 5%;
 }
+
 .info article h6 {
   font-weight: lighter;
   font-size: 100%;
 }
+
 .info article p {
   font-size: 250%;
   font-weight: bold;
 }
+
 .info article p small {
   font-size: 40%;
 }
+
 .similar-models {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-justify-items: center;
-gap: 5%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 5%;
 }
+
 .similar-models h2 {
   grid-column: 1/3;
   font-size: 200%;
 }
+
 .similar-models img {
   width: 100%;
   height: 23vw;
   object-fit: cover;
 }
 
-/*Footer css*/
-.footer{
-  color:var(--main-c-color);
+/*--------------------------------------- Footer css -----------------------------------------*/
+/*footer хэсгийн өнгө болон тэнхлэгийг нь тодорхойлсон*/
+.footer {
+  color: var(--main-c-color);
   display: flex;
   flex-direction: column;
 }
-.footer-group{
+
+/*техт зай, байршлыг нь заасан*/
+.footer-group {
   text-align: start;
   border: 1px solid #999999;
   margin: 50px;
   padding: 15px 30px;
 }
-.footer-group.h2{
+
+/*техт гарчиг*/
+.footer-group.h2 {
   font-size: 22px;
 }
+
+/*техт мөрийн өндөр, хэмжээг заасан*/
 .footer-group p {
   font-size: 14px;
   line-height: 150%;
 }
-.footer.p{
+
+/*техт фонтыг хэмжээг зааж өгсөн*/
+.footer.p {
   font-size: 12px;
 }
-.footer-group.button{
+
+/*тест товчийн өнгө, фонт, хэмжээг тодорхойлсон*/
+.footer-group.button {
   background-color: var(--main-bg-color);
   color: var(--main-c-color);
   font-size: 12px;
@@ -550,6 +734,8 @@ gap: 5%;
   font-family: 'Montserrat';
   cursor: pointer;
 }
+
+/*social хэсгийн section-ийг үүсгэсэн*/
 .footer.social {
   background-color: var(--main-c-color);
   color: var(--main-bg-color);
@@ -557,71 +743,88 @@ gap: 5%;
   flex-direction: column;
   text-align: center;
 }
-.footer.social.title{
+
+/*social хэсгийн дээд техтыг тодорхойлно*/
+.footer.social.title {
   text-align: center;
   font-size: 48px;
   font-family: 'EB Garamond';
   font-weight: bold;
 }
-.footer.social.icons{
+
+/*social icon бүхэлд нь байршлыг заасан*/
+.footer.social.icons {
   flex-direction: row;
   justify-content: space-around;
   margin: 0 10% 0 10%;
-  flex-wrap: wrap  ;
+  flex-wrap: wrap;
 }
-.footer.social.svg.item{
+
+/*social icon тус бүрд нь байршлыг заасан*/
+.footer.social.svg.item {
   padding-bottom: 50px;
   width: 40px
 }
 
+/*copyright техтыг тодорхойлсон*/
 .footer.copyright {
   font-size: 12px;
   text-align: start;
   color: var(--main-c-color);
   padding: 2%;
 }
+
 @media screen and (max-width: 70em) {
 
- menu {
-  width: 100%;
-  max-height: 0;
-  overflow: hidden;
-  padding: 0;
- }
- .list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  justify-content: center;
-  width: 100%;
-  max-height: 100%;
-  overflow: hidden;
- }
- .list li {
-  padding: 2%;
- }
- .navbar label {
-display: inline-flex;
-align-items: center;
-cursor: pointer;
- }
- header label {
-  margin: 30px;
- }
- header label svg{
-  fill: white;
+  menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .list li {
+    padding: 2%;
+  }
+
+  .navbar label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  header label {
+    margin: 30px;
+  }
+
+  header label svg {
+    fill: white;
+  }
+
+  #toggler:checked~menu {
+    max-height: 100%;
+  }
 }
- #toggler:checked ~ menu{
-  max-height: 100%;
- }
-}
+
 header input {
   height: 0;
 }
-header label svg{
+
+header label svg {
   color: transparent;
 }
+
 header label {
   height: 0;
 }
