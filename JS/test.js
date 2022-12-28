@@ -40,7 +40,7 @@ class MyModel {
       // Parse url
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
-      const modelName = urlParams.get('modelname');
+      const modelName = urlParams.get('modelName');
       // Helper function
       const prepare_one_block = (e) => {
         const modelNames = new MyModel(e.modelName).render();
