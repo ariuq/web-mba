@@ -1,4 +1,3 @@
-// CLASS : OLD
 class MyModel {
     constructor(modelName) {
       this.modelName = modelName;
