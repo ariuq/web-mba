@@ -8,12 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cars</title>
-    <script>
-        fetch('https://api.jsonbin.io/v3/b/637b3aab2b3499323b05e489')
-  .then(res => res.json())
-  .then(res => {res.record.forEach(e => console.log(e))})
-  .catch(err => console.error(err))
-    </script>
+    <script type="module" src="../JS/test.js"></script>
 </head>
 <body>
     <header>
@@ -31,7 +26,7 @@
        </header>
 
        <main>
-        <section id="apiResponse">
+        <section id="cars">
             <h1>Our models</h1>
             <div>
                 <button>All models</button>
@@ -57,6 +52,7 @@
                 <label for="model4">Cabriolets</label><br>
             </div>
         </section>
+
        </main>
        <footer>
         <section>

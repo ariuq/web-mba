@@ -52,7 +52,7 @@
         let retVal = "";
         for (const carModel of carModels) {
           let carModelObj = new MyCarModel(carModel.modelName);
-          retVal += carModelObj.render();
+          retVal += carModelObj.render();   
           for (const car of carModel.cars) {
             let carObj = new MyCar(car.name, car.price, car.img);
             retVal += carObj.render();
