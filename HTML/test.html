@@ -7,35 +7,243 @@
     content="Mercedes-Benz is a German global automobile marque and a division of Daimler AG. Mercedes-Benz is known for luxury vehicles, buses, coaches, ambulances and trucks. The headquarters is in Stuttgart, Baden-Württemberg.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/test.css" />
     <title>Cars</title>
-    <script type="module" src="../JS/test.js"></script>
+    <script>
+        class MyCarModel {
+          constructor(modelName) {
+            this.modelName = modelName;
+          }
+  
+          render() {
+            return `<article class="carmodels">
+                              <p>${this.modelName}</p>
+                              <br>
+                          </article>`;
+          }
+        }
+        class MyCar {
+          constructor(name, price, img) {
+            this.name = name;
+            this.price = price;
+            this.img = img;
+          }
+  
+          render() {
+            return `<article class="car">
+                          <h3>${this.name}</h3>
+                          <p>OTR price starting from £${this.price}</p>
+                          <a href="carMore.html"><img src="${this.img}" alt="mercedes-benz cars"></a>
+                          <button>Test drive</button>
+                          </article>`;
+          }
+        }
+        function App(carModels, targetElement) {
+          let retVal = "";
+          for (const carModel of carModels) {
+            let carModelObj = new MyCarModel(carModel.modelName);
+            retVal += carModelObj.render();   
+            for (const car of carModel.cars) {
+              let carObj = new MyCar(car.name, car.price, car.img);
+              retVal += carObj.render();
+            }
+          }
+          document
+            .getElementById(targetElement)
+            .insertAdjacentHTML("beforeend", retVal);
+        }
+        const carModels = [
+          {
+            modelName: "Hatchbacks",
+            cars: [
+              {
+                id: 1,
+                name: "A-Class Hatchback",
+                price: "32,250",
+                img: "../picture/cars/car1.png",
+                test: "",
+                type: "Mercedes-EQ",
+              },
+              {
+                id: 2,
+                name: "A-Class Hatchback",
+                price: "31,880",
+                img: "../picture/cars/car2.png",
+                test: "",
+                type: "Mercedes-EQ",
+              },
+              {
+                id: 3,
+                name: "B-Class",
+                price: "33,775",
+                img: "../picture/cars/car3.png",
+                test: "",
+                type: "Mercedes-EQ",
+              },
+            ],
+          },
+          {
+            modelName: "Saloons",
+            cars: [
+              {
+                id: 4,
+                name: "A-Class Saloon",
+                price: "32,475",
+                img: "../picture/cars/car4.png",
+                test: "",
+                type: "",
+              },
+              {
+                id: 5,
+                name: "E-Class Saloon",
+                price: "48,775",
+                img: "../picture/cars/car5.png",
+                test: "",
+              },
+              {
+                id: 6,
+                name: "EQE-Saloon",
+                price: "75,240",
+                img: "../picture/cars/car6.png",
+                test: "",
+              },
+            ],
+          },
+          {
+            modelName: "SUVs",
+            cars: [
+              {
+                id: 7,
+                name: "G-Class",
+                price: "131,095",
+                img: "../picture/cars/car7.png",
+                test: "",
+                type: "AMG",
+              },
+              {
+                id: 8,
+                name: "Mercedes-Maybach GLS",
+                price: "170,755",
+                img: "../picture/cars/car8.png",
+                test: "",
+                type: "AMG",
+              },
+              {
+                id: 9,
+                name: "EQA",
+                price: "50,510",
+                img: "../picture/cars/car9.png",
+                test: "",
+                type: "AMG",
+              },
+            ],
+          },
+          {
+            modelName: "Cabriolets",
+            cars: [
+              {
+                id: 10,
+                name: "C-Class Cabriolet",
+                price: "49,450",
+                img: "../picture/cars/car10.png",
+                test: "",
+                type: "",
+              },
+              {
+                id: 11,
+                name: "E-Class Cabriolet",
+                price: "56,195",
+                img: "../picture/cars/car11.png",
+                test: "",
+                type: "",
+              },
+              {
+                id: 12,
+                name: "SL",
+                price: "108,020",
+                img: "../picture/cars/car12.png",
+                test: "",
+                type: "",
+              },
+            ],
+          },
+        ];
+        window.onload = () => App(carModels, "mycars");
+      </script>
 </head>
 <body>
-    <header>
-        <a href="../index.html"><img src="../picture/logo.png" alt="mercedes-benz logo" style="width:100px; height: auto"></a>
+    <header class="navbar">
         <div>
-            <menu>
-                <li><a href="cars.html">Cars</a></li>
-                <li><a href="service.html">Service</a></li>
-                <li><a href="about.html">About us</a></li>
-            </menu>
+          <a class="Logo" href="../index.html"
+            ><img src="../picture/logo.png" alt="mercedes-benz logo"
+          /></a>
+          <div class="search">
+            <form class="search_form">
+              <input
+                class="search_input"
+                type="text"
+                id="site-search"
+                placeholder="search"
+              />
+  
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="white"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
+            </form>
+            <button>Shop</button>
+          </div>
         </div>
-        <input type="search" id="site-search" name="search" placeholder="search">
-        <button>Search</button>
-        <button>Shop online</button>
-       </header>
+        <input type="checkbox" id="toggler" />
+        <label for="toggler">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </label>
+        <menu>
+          <ul class="list">
+          <li><a href="cars.html">Cars</a></li>
+          <li><a href="service.html">Service</a></li>
+          <li><a href="about.html">About us</a></li>
+          </ul>
+        </menu>
+      </header>
 
-       <main>
-        <section id="cars">
+       <main class="cars">
+        <section class="models">
             <h1>Our models</h1>
-            <div>
+            <div class="modelbuttons">
                 <button>All models</button>
-                <button><img src="../picture/cars/eqLogo.png" alt="mercedes-benz eq logo" style="width:auto; height:15px"></button>
-                <button><img src="../picture/cars/amgLogo.png" alt="mercedes-benz amg logo" style="width:auto; height:15px"></button>
-                <button><img src="../picture/cars/maybachLogo.png" alt="mercedes-benz maybach logo" style="width:auto; height:15px"></button>
+                <button><img src="../picture/cars/eqLogo.png" alt="mercedes-benz eq logo"/>
+                </button>
+                <button>
+                    <img src="../picture/cars/amgLogo.png" alt="mercedes-benz amg logo"/>
+                </button>
+                <button>
+                    <img src="../picture/cars/maybachLogo.png" alt="mercedes-benz maybach logo"/>
+                </button>
                 <button>New models</button>
             </div>
-            <div>
+        </section>
+            <div class="types">
                 <p><b>Fuel type</b></p>
                 <input type="checkbox" id="type1" name="electric" value="electric">
                 <label for="type1">Electric</label><br>
@@ -51,8 +259,7 @@
                 <input type="checkbox" id="model4" name="cabriolet" value="cabriolet">
                 <label for="model4">Cabriolets</label><br>
             </div>
-        </section>
-
+            <section id="mycars"></section>
        </main>
        <footer>
         <section>

@@ -20,7 +20,7 @@ class MyModel {
       return `<article class="car">
               <big><b>${this.name}</b></big>
               <p>OTR price starting from £${this.price}</p>
-              <a href="carMore.html"><img src="${this.img}" alt="mercedes-benz cars" style="width:30%; height:auto;"></a>
+              <a href="carMore.html"><img src="${this.img}" alt="mercedes-benz cars"></a>
               <button>Test drive</button>
               </article>`;
     }
@@ -68,4 +68,4 @@ class MyModel {
   const recentCars = new carModels(
     'https://api.jsonbin.io/v3/b/637b3aab2b3499323b05e489'
   );
-  recentCars.Download('cars');
+  recentCars.Download('mycars');
