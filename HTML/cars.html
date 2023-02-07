@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../CSS/test.css" />
     <title>Cars</title>
     <script type="module" src="../JS/test.js"></script>
+    <script src="../JS/test1.js"></script>
   </head>
   <body>
     <header class="navbar">
@@ -81,39 +82,39 @@
       <section class="models">
         <h1>Our models</h1>
         <div class="modelbuttons">
-          <button>All models</button>
-          <button>
-            <img src="../picture/cars/eqLogo.png" alt="mercedes-benz eq logo" />
+          <button onclick="classifybyname('')">All models</button>
+          <button onclick="classifybyname('EQ')">
+            <img src="../picture/cars/eqLogo.png" alt="mercedes-benz eq logo"   />
           </button>
-          <button>
+          <button onclick="classifybyname('C-Class')" >
             <img
               src="../picture/cars/amgLogo.png"
               alt="mercedes-benz amg logo"
             />
           </button>
-          <button>
+          <button onclick="classifybyname('maybach')">
             <img
               src="../picture/cars/maybachLogo.png"
               alt="mercedes-benz maybach logo"
             />
           </button>
-          <button>New models</button>
+          <button onclick="classifybyname('newmodel')">New models</button>
         </div>
       </section>
       <div class="types">
-        <p><b>Fuel type</b></p>
-        <input type="checkbox" id="type1" name="electric" value="electric" />
+        <!-- <p><b>Fuel type</b></p>
+        <input type="checkbox" id="type1" name="checkbox1" onclick="getCheckedCheckboxesFor()" value="electric" />
         <label for="type1">Electric</label><br />
-        <input type="checkbox" id="type2" name="hybrid" value="hybrid" />
-        <label for="type2">Plug-in hybrid</label><br />
+        <input type="checkbox" id="type2" name="checkbox1" onclick="getCheckedCheckboxesFor()" value="hybrid" />
+        <label for="type2">Plug-in hybrid</label><br /> -->
         <p><b>Models</b></p>
-        <input type="checkbox" id="model1" name="hatchback" value="hatchback" />
+        <input type="checkbox" id="model1" name="checkbox"  onclick="getCheckedCheckboxesFor()" value="hatchbacks" />
         <label for="model1">Hatchbacks</label><br />
-        <input type="checkbox" id="model2" name="saloon" value="saloon" />
+        <input type="checkbox" id="model2" name="checkbox" onclick="getCheckedCheckboxesFor()" value="saloons" />
         <label for="model2">Saloons</label><br />
-        <input type="checkbox" id="model3" name="suv" value="suv" />
+        <input type="checkbox" id="model3" name="checkbox" onclick="getCheckedCheckboxesFor()" value="suvs" />
         <label for="model3">SUVs</label><br />
-        <input type="checkbox" id="model4" name="cabriolet" value="cabriolet" />
+        <input type="checkbox" id="model4" name="checkbox" onclick="getCheckedCheckboxesFor()" value="cabriolets" />
         <label for="model4">Cabriolets</label><br />
       </div>
       <section id="mycars"></section>
