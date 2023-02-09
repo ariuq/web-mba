@@ -71,10 +71,11 @@ async function classifybyname(name){
         .reduce((p, c) => p + c, ''); // 3car aa zalgaj baigaa 1string
       return modelNames + cars; //1model 3car 
     };
-  const response = await fetch("https://api.jsonbin.io/v3/b/637b3aab2b3499323b05e489"); //json ruuga handaad responce awna
-  const result = await response.json(); //json bolgono ene dotor metadata, record gsn 2 element bga
-  const records = result["record"]; //bidnii data recordd ni bga tul recordiig ni awch baigaa
-  console.log(records);
+ const response = await fetch("https://maralaaback-i2rl.vercel.app/cardata"); //json ruuga handaad responce awna
+    const result = await response.json();
+    console.log(result); //json bolgono ene dotor metadata, record gsn 2 element bga
+    const records = result;
+    console.log(records)
     if (records.length > 0 ){
         var k = []
         records.map(item=>{
