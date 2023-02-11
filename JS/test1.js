@@ -1,27 +1,18 @@
 
-let GeneralModel = ''
-let  values = [];
-let  values1 = [];
+let GeneralModel = ''// all models bainga bairshina
+let  values = [];    // checkbox had array
 
-function getCheckedCheckboxesFor() {
+function getCheckedCheckboxesFor() { // check box function
     values = [];
-    values1 = [];
     
-    var checkboxes = document.querySelectorAll('input[name="checkbox"]:checked')
-    let checkboxes1 = document.querySelectorAll('input[name="checkbox1"]:checked')
+    var checkboxes = document.querySelectorAll('input[name="checkbox"]:checked') // 1 elementeer guilgne
 
     Array.prototype.forEach.call(checkboxes, function(el) {
-        values.push(el.value);
-    });
+        values.push(el.value); 
+    }); // checkbox darahad ajilna, values-d pushlene
 
-    Array.prototype.forEach.call(checkboxes1, function(el) {
-        values1.push(el.value);
-    });
-    classifybyname(GeneralModel)
-
-    // return values;
+    classifybyname(GeneralModel) // return values;
 }
-
 class MyModel {
     constructor(modelName) {
       this.modelName = modelName;
@@ -50,41 +41,36 @@ class MyModel {
               </article>`;
     }
   }
+async function classifybyname(name){ //async-paralellaar dataga avna
 
+    GeneralModel = name; //parametr damjuulna-->global huvisagch
 
-
-async function classifybyname(name){
-
-    GeneralModel = name;
-
-    let element = document.getElementById("mycars");
-    const parent = document.getElementById("mycars")
-    while (parent.firstChild) {
+    let element = document.getElementById("mycars");  //render html
+    const parent = document.getElementById("mycars")  
+    while (parent.firstChild) {     //parent class dtrh function
         parent.firstChild.remove()
-    }
-    
-    // l.innerHTML = ''
-    const prepare_one_block = (e) => {
+    }                               //utga butsaah remove function
+    const prepare_one_block = (e) => { 
       const modelNames = new MyModel(e.modelName).render();
       const cars = e.cars
         .map((car) => new MyCar(car.id, car.name, car.price, car.img).render())
-        .reduce((p, c) => p + c, ''); // 3car aa zalgaj baigaa 1string
-      return modelNames + cars; //1model 3car 
+        .reduce((p, c) => p + c, ''); // 3 car aa zalgaj baigaa 1 string
+      return modelNames + cars; // 1 model 3 car 
     };
- const response = await fetch("https://maralaaback-i2rl.vercel.app/cardata"); //json ruuga handaad responce awna
-    const result = await response.json();
-    console.log(result); //json bolgono ene dotor metadata, record gsn 2 element bga
+    
+    const response = await fetch("https://maralaaback-i2rl.vercel.app/cardata"); //json ruuga handaad responce awna
+    const result = await response.json();//json bolgono
+    console.log(result); //console data garna
     const records = result;
     console.log(records)
-    if (records.length > 0 ){
+    if (records.length > 0 ){ //records ni hoosn bish bvl maplana
         var k = []
-        records.map(item=>{
+        records.map(item=>{ 
             var as = {}
             as['modelName'] = item.modelName;
-            var lss = [];
+            var lss = []; //lss=1 car
 
-            if(values.length >0){
-               
+            if(values.length >0){ //checkbox hooson bish bvl haih function
                 if(values.includes(item.modelName.toLowerCase())){
                     console.log(values)
                     item.cars.map(el=>{
@@ -93,40 +79,31 @@ async function classifybyname(name){
                         }
                     })
                 }
-            } else {
+            } else { //hooson bvl 
                 if(GeneralModel == "newmodel"){
                         if(item.modelName == "Cabriolets") {
-                            item.cars.map(el=>{
-                                
+                            item.cars.map(el=>{   
                                     lss.push(el);
-                                
-                    })
+                            })
                         }
-                } else {
-
+                } else { //model dotorh car haih
                     item.cars.map(el=>{
                             if( el.name.toUpperCase().includes(GeneralModel.toUpperCase())){
                                 lss.push(el);
                             }
-                })
-                    
+                    })
                 }
             }
 
-            
-        if(lss.length>0){
-            as['cars'] = lss;
+        if(lss.length>0){// el=mashin medeelel bvl cars pushlene
+            as['cars'] = lss; //cars dtr elementeer ylgarsn bgaa
             k.push(as);
-          }
-          
+          } 
         })
-      const helloworld = k.map(e=>{
-        return prepare_one_block(e)
+      const helloworld = k.map(e=>{ 
+        return prepare_one_block(e) //line line-aar uzuulne 
       }).reduce((p, c) => p + c, '');
-      
-      element.insertAdjacentHTML('beforeend', helloworld); 
-    } else {
-      
+      element.insertAdjacentHTML('beforeend', helloworld); // insert hiine html
     }
   }
 
